@@ -39,3 +39,15 @@
 - Set up Ansible to automate deployment
 - Write Ansible playbook to pull image from ACR and run container
 - Add Ansible deployment stage to Jenkinsfile
+
+## Session 4 - Completed ✅
+- Switched from ACR to Docker Hub (ACR deleted on session reset)
+- Fixed Docker Hub credentials (lowercase username + access token)
+- Full pipeline working: Clone → Maven Build → Docker Build → Docker Hub Push
+
+## Next Session Goals
+- Install and configure Ansible
+- Write Ansible playbook to pull image from Docker Hub and run container
+- Add Ansible deployment stage to Jenkinsfile
+
+
