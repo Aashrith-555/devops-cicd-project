@@ -27,3 +27,5 @@ Everytime while pushing the file into main branch the OS asks for Personal Acces
 3. Create a Java file: "nano myapp/src/main/java/com/devops/App.java" (You can create the application you wish)
 4. Create the maven build file: "nano myapp/pom.xml" (Build the maven build file as your req. configurations)
 5. Create jenkins file: "nano ~/devops-cicd-project/Jenkinsfile" 
+
+## 2. Create Jenkins pipeline job that connects to your GitHub repo!
