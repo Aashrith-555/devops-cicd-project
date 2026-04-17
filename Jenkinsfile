@@ -4,7 +4,7 @@ pipeline {
         ACR_NAME = 'devopscicdregistry.azurecr.io'
         IMAGE_NAME = 'myapp'
         ACR_USERNAME = 'devopscicdregistry'
-        ACR_PASSWORD = '<paste your ACR password here>'
+        ACR_PASSWORD = '5hkVeoclsVTHRVVvV38qNs8J8xX67QQlEXuTBGb6WXgiFXW4J3I4JQQJ99CDAC1i4TkEqg7NAAACAZCRrNrF'
     }
     stages {
         stage('Clone Code') {
