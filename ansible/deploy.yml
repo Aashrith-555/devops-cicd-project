@@ -1,0 +1,35 @@
+---
+- name: Deploy myapp container
+  hosts: local
+  become: yes
+  vars:
+    dockerhub_username: "aashrithk"
+    image_name: "myapp"
+    container_name: "myapp-container"
+    container_port: "8080"
+
+  tasks:
+    - name: Pull latest image from Docker Hub
+      community.docker.docker_image:
+        name: "{{ dockerhub_username }}/{{ image_name }}:latest"
+        source: pull
+        force_source: yes
+
+    - name: Stop existing container if running
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        state: stopped
+      ignore_errors: yes
+
+    - name: Remove existing container
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        state: absent
+      ignore_errors: yes
+
+    - name: Run new container
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        image: "{{ dockerhub_username }}/{{ image_name }}:latest"
+        state: started
+        restart_policy: no
