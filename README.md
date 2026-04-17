@@ -7,10 +7,10 @@ cd devops-cicd-project
 ./setup.sh
 
 # Use following commands to push the updated code into git everytime you edit
-cd ~/devops-cicd-project
-git add setup.sh
-git commit -m "Update for the session"
-git push origin main
+1. cd ~/devops-cicd-project
+2. git add setup.sh
+3. git commit -m "Update for the session"
+4. git push origin main
 
 # Note:
 Everytime while pushing the file into main branch the OS asks for Personal Access Token (PAT) as password along with your-github username. So generate PAT using following steps:
