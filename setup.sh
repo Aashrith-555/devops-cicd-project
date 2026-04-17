@@ -51,6 +51,10 @@ echo "Docker status:"; sudo systemctl is-active docker
 echo "Maven version:"; mvn -version
 echo "Git version:"; git --version
 
+echo "===== Configure Git ====="
+git config --global user.name "Aashrith-555"
+git config --global user.email "aashrithkalikota@gmail.com"
+
 echo "===== All done! ====="
 echo "Jenkins is at: http://20.118.248.99/:8080"
 echo "Initial admin password:"

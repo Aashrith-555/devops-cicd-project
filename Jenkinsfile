@@ -1,10 +1,9 @@
 pipeline {
     agent any
     environment {
-        ACR_NAME = 'devopscicdregistry.azurecr.io'
+        DOCKERHUB_USERNAME = 'AashrithK'
         IMAGE_NAME = 'myapp'
-        ACR_USERNAME = 'devopscicdregistry'
-        ACR_PASSWORD = '5hkVeoclsVTHRVVvV38qNs8J8xX67QQlEXuTBGb6WXgiFXW4J3I4JQQJ99CDAC1i4TkEqg7NAAACAZCRrNrF'
+        DOCKERHUB_PASSWORD = 'Ashu@1234'
     }
     stages {
         stage('Clone Code') {
@@ -22,21 +21,20 @@ pipeline {
         stage('Docker Build') {
             steps {
                 echo 'Building Docker image...'
-                sh 'docker build -t ${IMAGE_NAME}:latest .'
+                sh 'docker build -t ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:latest .'
             }
         }
-        stage('Push to ACR') {
+        stage('Push to Docker Hub') {
             steps {
-                echo 'Pushing to Azure Container Registry...'
-                sh 'docker login ${ACR_NAME} -u ${ACR_USERNAME} -p ${ACR_PASSWORD}'
-                sh 'docker tag ${IMAGE_NAME}:latest ${ACR_NAME}/${IMAGE_NAME}:latest'
-                sh 'docker push ${ACR_NAME}/${IMAGE_NAME}:latest'
+                echo 'Pushing to Docker Hub...'
+                sh 'docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}'
+                sh 'docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:latest'
             }
         }
     }
     post {
         success {
-            echo 'Pipeline completed successfully! Image pushed to ACR.'
+            echo 'Pipeline completed! Image pushed to Docker Hub.'
         }
         failure {
             echo 'Pipeline failed! Check the logs above.'
