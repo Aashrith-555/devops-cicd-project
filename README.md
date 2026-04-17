@@ -35,3 +35,17 @@ Everytime while pushing the file into main branch the OS asks for Personal Acces
 4. Save
 5. Build the job now.
 
+## 3. Now containerize your app with docker and push the image to Azure Container Registry (ACR)
+1. First create a dockerfile (Stage-1: Build Stage-2: Run).
+2. Test the docker locally ("sudo docker build -t myapp:latest .").
+3. Verify the image existance ("sudo docker images").
+4. Fix the pom.xml.
+5. Test run the container locally ("sudo docker run --rm myapp:latest").
+6. Create ACR in Azure portal.
+7. Install azure CLI ("curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash") (Also added to setup.sh file and only required to run this command if still the CLI is missed somehow).
+8. Enable admin access keys which are found in access keys of ACR. Enable admin user toggle.
+9. Login into ACR from VM using these credentials("sudo docker login <name_of_acr_created>.azurecr.io").
+10. Push your image:
+    i. sudo docker tag myapp:latest devopscicdregistry.azurecr.io/myapp:latest
+    ii. sudo docker push devopscicdregistry.azurecr.io/myapp:latest
+11. Update the Jenkinsfile and remember to remove all the sudo commands so that pipeline built successfully.
