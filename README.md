@@ -29,3 +29,9 @@ Everytime while pushing the file into main branch the OS asks for Personal Acces
 5. Create jenkins file: "nano ~/devops-cicd-project/Jenkinsfile" 
 
 ## 2. Create Jenkins pipeline job that connects to your GitHub repo!
+1. Create a new pipelines jenkins job
+2. Configure the pipelines: Change definition to "Pipeline script from SCM"
+3. In the SCM give the repository link
+4. Save
+5. Build the job now.
+
