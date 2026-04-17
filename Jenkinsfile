@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKERHUB_USERNAME = 'aashrithK'
+        DOCKERHUB_USERNAME = 'aashrithk'
         IMAGE_NAME = 'myapp'
         DOCKERHUB_PASSWORD = 'Ashu@1234'
     }
