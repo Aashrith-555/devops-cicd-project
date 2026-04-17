@@ -22,15 +22,15 @@ pipeline {
         stage('Docker Build') {
             steps {
                 echo 'Building Docker image...'
-                sh 'sudo docker build -t ${IMAGE_NAME}:latest .'
+                sh 'docker build -t ${IMAGE_NAME}:latest .'
             }
         }
         stage('Push to ACR') {
             steps {
                 echo 'Pushing to Azure Container Registry...'
-                sh 'sudo docker login ${ACR_NAME} -u ${ACR_USERNAME} -p ${ACR_PASSWORD}'
-                sh 'sudo docker tag ${IMAGE_NAME}:latest ${ACR_NAME}/${IMAGE_NAME}:latest'
-                sh 'sudo docker push ${ACR_NAME}/${IMAGE_NAME}:latest'
+                sh 'docker login ${ACR_NAME} -u ${ACR_USERNAME} -p ${ACR_PASSWORD}'
+                sh 'docker tag ${IMAGE_NAME}:latest ${ACR_NAME}/${IMAGE_NAME}:latest'
+                sh 'docker push ${ACR_NAME}/${IMAGE_NAME}:latest'
             }
         }
     }
