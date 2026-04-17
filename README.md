@@ -2,9 +2,9 @@
 Full CI/CD pipeline using Jenkins, Docker, Ansible, K8s on Azure
 
 # Setting up the tools using the script setup.sh from the following commands in a linux environment
-git clone https://github.com/"YourGitHubUsername"/devops-cicd-project.git
-cd devops-cicd-project
-./setup.sh
+1. git clone https://github.com/"YourGitHubUsername"/devops-cicd-project.git
+2. cd devops-cicd-project
+3. ./setup.sh
 
 # Use following commands to push the updated code into git everytime you edit
 1. cd ~/devops-cicd-project
