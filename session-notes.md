@@ -24,3 +24,18 @@
 4. Pipeline script from SCM → Git
 5. Repo: https://github.com/Aashrith-555/devops-cicd-project.git
 6. Branch: */main → Save → Build Now
+
+## Session 3 - Completed ✅
+- Created Dockerfile with multi-stage build
+- Fixed pom.xml to include main class manifest
+- Built Docker image successfully locally
+- Set up Azure Container Registry (ACR)
+- Enabled ACR admin credentials for authentication
+- Added Docker Build + ACR Push stages to Jenkinsfile
+- Fixed Jenkins Docker permission (added jenkins to docker group)
+- Full pipeline working: Clone → Maven Build → Docker Build → ACR Push
+
+## Next Session Goals
+- Set up Ansible to automate deployment
+- Write Ansible playbook to pull image from ACR and run container
+- Add Ansible deployment stage to Jenkinsfile
