@@ -50,4 +50,15 @@
 - Write Ansible playbook to pull image from Docker Hub and run container
 - Add Ansible deployment stage to Jenkinsfile
 
+## Session 5 - Completed ✅
+- Installed Ansible
+- Created Ansible inventory and deploy playbook
+- Upgraded app to HTTP web server on port 8080
+- Container exposed on port 8085
+- App accessible at http://<vm-ip>:8085
+- Full pipeline: Clone → Maven → Docker Build → Docker Hub → Ansible Deploy
 
+## Next Session Goals
+- Set up Kubernetes (AKS) on Azure
+- Create K8s deployment and service manifests
+- Replace Ansible deploy stage with kubectl deploy stage
