@@ -6,7 +6,6 @@
     dockerhub_username: "aashrithk"
     image_name: "myapp"
     container_name: "myapp-container"
-    container_port: "8080"
 
   tasks:
     - name: Pull latest image from Docker Hub
@@ -32,4 +31,6 @@
         name: "{{ container_name }}"
         image: "{{ dockerhub_username }}/{{ image_name }}:latest"
         state: started
-        restart_policy: no
+        restart_policy: unless-stopped
+        ports:
+          - "8085:8080"
