@@ -30,6 +30,9 @@ sudo systemctl start docker
 sudo usermod -aG docker azureuser
 sudo usermod -aG docker jenkins
 
+echo "===== Installing Azure CLI ====="
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
 echo "===== Installing Git ====="
 sudo apt-get install -y git
 
@@ -45,6 +48,6 @@ echo "Maven version:"; mvn -version
 echo "Git version:"; git --version
 
 echo "===== All done! ====="
-echo "Jenkins is at: http://20.106.36.203/:8080"
+echo "Jenkins is at: http://135.119.17.243/:8080"
 echo "Initial admin password:"
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
