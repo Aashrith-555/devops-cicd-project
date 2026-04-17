@@ -40,6 +40,10 @@ echo "===== Starting Jenkins ====="
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
 
+echo "===== Fixing Docker Permission for Jenkins ====="
+sudo usermod -aG docker jenkins
+sudo systemctl restart jenkins
+
 echo "===== Verifying installations ====="
 echo "Java version:"; java -version
 echo "Jenkins status:"; sudo systemctl is-active jenkins
@@ -48,6 +52,6 @@ echo "Maven version:"; mvn -version
 echo "Git version:"; git --version
 
 echo "===== All done! ====="
-echo "Jenkins is at: http://135.119.17.243/:8080"
+echo "Jenkins is at: http://20.118.248.99/:8080"
 echo "Initial admin password:"
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
