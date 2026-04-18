@@ -31,6 +31,20 @@ pipeline {
                 sh 'docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:latest'
             }
         }
+	stage('Ansible Deploy') {
+            steps {
+                echo 'Deploying with Ansible...'
+                sh 'ansible-playbook -i ansible/inventory.ini ansible/deploy.yml'
+            }
+        }
+        stage('Kubernetes Deploy') {
+            steps {
+                echo 'Deploying to Kubernetes...'
+                sh 'kubectl apply -f k8s/deployment.yaml'
+                sh 'kubectl apply -f k8s/service.yaml'
+                sh 'kubectl rollout status deployment/myapp-deployment'
+            }
+        }
     }
     post {
         success {
