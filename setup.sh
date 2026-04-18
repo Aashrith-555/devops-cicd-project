@@ -59,6 +59,14 @@ echo "===== Configure Git ====="
 git config --global user.name "Aashrith-555"
 git config --global user.email "aashrithkalikota@gmail.com"
 
+echo "===== Installing kubectl ====="
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+echo "===== Installing minikube  ====="
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
 echo "===== All done! ====="
 echo "Jenkins is at: http://40.67.160.10:8080"
 echo "Initial admin password:"
