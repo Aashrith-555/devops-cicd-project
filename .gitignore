@@ -1,0 +1,14 @@
+# Binary files
+ansible/kubectl
+ansible/minikube-linux-amd64
+minikube-linux-amd64
+kubectl
+*.tar
+*.zip
+*.gz
+
+# Java build output
+myapp/target/
+
+# Docker
+.docker/
