@@ -29,7 +29,6 @@ sudo systemctl enable docker
 sudo systemctl start docker
 sudo usermod -aG docker $USER
 sudo usermod -aG docker jenkins
-newgrp docker
 
 echo "===== Installing Azure CLI ====="
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
@@ -57,6 +56,6 @@ git config --global user.name "Aashrith-555"
 git config --global user.email "aashrithkalikota@gmail.com"
 
 echo "===== All done! ====="
-echo "Jenkins is at: http://20.80.84.242:8080"
+echo "Jenkins is at: http://40.67.160.10:8080"
 echo "Initial admin password:"
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
