@@ -1,7 +1,7 @@
 ---
 - name: Deploy myapp container
   hosts: local
-  become: yes
+  become: no
   vars:
     dockerhub_username: "aashrithk"
     image_name: "myapp"
