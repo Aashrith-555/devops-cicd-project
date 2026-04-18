@@ -36,6 +36,10 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 echo "===== Installing Git ====="
 sudo apt-get install -y git
 
+echo "===== Installing Ansible ====="
+sudo apt-get install -y ansible
+ansible-galaxy collection install community.docker
+
 echo "===== Starting Jenkins ====="
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
