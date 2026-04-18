@@ -27,9 +27,8 @@ echo "===== Installing Docker ====="
 sudo apt-get install -y docker.io
 sudo systemctl enable docker 
 sudo systemctl start docker
-sudo usermod -aG docker azureuser
-sudo usermod -aG docker jenkins
 sudo usermod -aG docker $USER
+sudo usermod -aG docker jenkins
 newgrp docker
 
 echo "===== Installing Azure CLI ====="
