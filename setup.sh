@@ -30,6 +30,7 @@ sudo systemctl start docker
 sudo usermod -aG docker azureuser
 sudo usermod -aG docker jenkins
 sudo usermod -aG docker $USER
+newgrp docker
 
 echo "===== Installing Azure CLI ====="
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
