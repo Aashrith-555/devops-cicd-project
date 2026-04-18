@@ -57,6 +57,6 @@ git config --global user.name "Aashrith-555"
 git config --global user.email "aashrithkalikota@gmail.com"
 
 echo "===== All done! ====="
-echo "Jenkins is at: http://20.118.248.99/:8080"
+echo "Jenkins is at: http://20.80.84.242:8080"
 echo "Initial admin password:"
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
