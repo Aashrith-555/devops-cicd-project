@@ -62,3 +62,22 @@
 - Set up Kubernetes (AKS) on Azure
 - Create K8s deployment and service manifests
 - Replace Ansible deploy stage with kubectl deploy stage
+
+## Session 6 - Completed ✅
+- Installed Minikube and kubectl
+- Created K8s deployment.yaml and service.yaml
+- Fixed Jenkins docker permissions
+- Fixed Ansible sudo issue
+- Fixed large binary files in git
+- Copied kubeconfig to jenkins user
+- All 6 pipeline stages working!
+
+## Full Pipeline Flow
+Code pushed to GitHub
+→ Jenkins pulls code
+→ Maven builds JAR
+→ Docker builds image
+→ Image pushed to Docker Hub
+→ Ansible deploys container on port 8085
+→ Kubernetes deploys 2 replicas with self-healing
+→ App live and accessible!
